@@ -3,7 +3,7 @@ import pandas as pd
 import season_data
 import all_teams
 from season_data import *
-from all_teams import all_teams
+from all_teams import *
 '''
 #print('{}\n' .format(df_2014))
 sorted_df_2014 = df_2014.sort_values(['HomeTeam', 'AwayTeam'])
@@ -29,28 +29,24 @@ for team in df_2014['HomeTeam']:
 #teams.sort()
 #print(teams)
 
-print('{}\n' .format(df_09_10))
-print('{}\n' .format(df_10_11))
-print('{}\n' .format(df_11_12))
-print('{}\n' .format(df_12_13))
-print('{}\n' .format(df_13_14))
-print('{}\n' .format(df_14_15))
-print('{}\n' .format(df_15_16))
-print('{}\n' .format(df_16_17))
-print('{}\n' .format(df_17_18))
-print('{}\n' .format(df_18_19))
 '''
+# this function takes in a df and a team as args, and outputs
+# the df with all the wanted columns
 def processSingleSeason(dataframe, team):
     new_df = dataframe[(dataframe['HomeTeam'] == team) | (dataframe['AwayTeam'] == team)]
     new_df_final = new_df[['Div', 'Date', 'HomeTeam', 'AwayTeam', 'FTHG', 'FTAG', 'FTR']]
     return new_df_final
-
+## a series for all the seasons
 seasonSeries = pd.Series([df_09_10, df_10_11, df_11_12, df_12_13, 
                         df_13_14, df_14_15, df_15_16, df_16_17, 
                         df_17_18, df_18_19])
+teams = []
+for i in range(0, (len(seasonSeries) - 1)):
+    for team in seasonSeries[i]['HomeTeam']:
+        teams.append([team, processSingleSeason(seasonSeries[i], team)])
 
 
-
+print(len(teams))
 
 
 

@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import season_data
-from season_data import *
+from season_data import all_seasons
 
 all_teams = []
 for team in all_seasons['HomeTeam']:
