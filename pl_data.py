@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 import season_data
 import all_teams
+import IPython
+from IPython.display import display
 from season_data import *
 from all_teams import *
 '''
@@ -40,14 +42,4 @@ def processSingleSeason(dataframe, team):
 seasonSeries = pd.Series([df_09_10, df_10_11, df_11_12, df_12_13, 
                         df_13_14, df_14_15, df_15_16, df_16_17, 
                         df_17_18, df_18_19, df_19_20])
-teams = []
-for i in range(0, (len(seasonSeries) - 1)):
-    for team in seasonSeries[i]['HomeTeam']:
-        teams.append([team, processSingleSeason(seasonSeries[i], team)])
-
-
-print(len(teams))
-
-
-
 
