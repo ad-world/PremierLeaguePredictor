@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
-
+import IPython
+from IPython.display import display
 df_09_10 = pd.read_csv('data/season-0910_csv.csv')
 df_10_11 = pd.read_csv('data/season-1011_csv.csv')
 df_11_12 = pd.read_csv('data/season-1112_csv.csv')
@@ -15,4 +16,3 @@ df_19_20 = pd.read_csv('data/season-1920_csv.csv')
 all_seasons = pd.concat([df_09_10, df_10_11, df_11_12, df_12_13,
                         df_13_14, df_14_15, df_15_16, df_16_17,
                         df_17_18, df_18_19, df_19_20], axis=0)
-print(repr(all_seasons))
