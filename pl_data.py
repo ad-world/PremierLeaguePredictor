@@ -39,7 +39,7 @@ def processSingleSeason(dataframe, team):
 ## a series for all the seasons
 seasonSeries = pd.Series([df_09_10, df_10_11, df_11_12, df_12_13, 
                         df_13_14, df_14_15, df_15_16, df_16_17, 
-                        df_17_18, df_18_19])
+                        df_17_18, df_18_19, df_19_20])
 teams = []
 for i in range(0, (len(seasonSeries) - 1)):
     for team in seasonSeries[i]['HomeTeam']:
