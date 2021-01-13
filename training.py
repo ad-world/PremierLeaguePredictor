@@ -62,13 +62,10 @@ def train_predict(clf, X_train, y_train, X_test, y_test):
 clf_A = LogisticRegression(random_state = 42)
 clf_B = xgb.XGBClassifier(seed = 82)
 
-print(x_train)
-print(y_train)
-'''
 train_predict(clf_A, x_train, y_train, x_test, y_test)
 print(' ')
 
 train_predict(clf_B, x_train, y_train, x_test, y_test)
 print(' ')
-'''
+
 
